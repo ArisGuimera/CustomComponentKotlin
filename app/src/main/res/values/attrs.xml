@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="PasswordValidator">
-        <attr name="image" format="reference"/>
+        <attr name="underlineErrorColor" format="color"/>
+        <attr name="underlineSuccessColor" format="color"/>
         <attr name="textError" format="string"/>
     </declare-styleable>
 </resources>
