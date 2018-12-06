@@ -15,7 +15,7 @@ import java.util.regex.Pattern
 /**
  * Created by aristidesguimeraorozco on 30/9/18.
  */
-class PasswordValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs), TextWatcher {
+class EmailValidatorView(context: Context, attrs: AttributeSet) : RelativeLayout(context, attrs), TextWatcher {
 
 
     var successColor: Int
@@ -24,14 +24,13 @@ class PasswordValidatorView(context: Context, attrs: AttributeSet) : RelativeLay
     init {
         inflate(context, R.layout.password_validator, this)
 
-        val etPassword: EditText = findViewById(R.id.etPassword)
 
-        val attributes = context.obtainStyledAttributes(attrs, R.styleable.PasswordValidator)
-        tvErrorCode.text = attributes.getString(R.styleable.PasswordValidator_textError)
-        errorColor = attributes.getColor(R.styleable.PasswordValidator_underlineErrorColor, ContextCompat.getColor(context, R.color.colorAccent))
-        successColor = attributes.getColor(R.styleable.PasswordValidator_underlineSuccessColor, ContextCompat.getColor(context, R.color.colorAccent))
+        val attributes = context.obtainStyledAttributes(attrs, R.styleable.MailValidator)
+        tvErrorCode.text = attributes.getString(R.styleable.MailValidator_textError)
+        errorColor = attributes.getColor(R.styleable.MailValidator_underlineErrorColor, ContextCompat.getColor(context, R.color.colorAccent))
+        successColor = attributes.getColor(R.styleable.MailValidator_underlineSuccessColor, ContextCompat.getColor(context, R.color.colorAccent))
         attributes.recycle()
-        etPassword.addTextChangedListener(this)
+        etMail.addTextChangedListener(this)
     }
 
     override fun afterTextChanged(s: Editable?) {
@@ -48,10 +47,10 @@ class PasswordValidatorView(context: Context, attrs: AttributeSet) : RelativeLay
         val valid = matcher.matches()
         if (valid) {
             tvErrorCode.visibility = View.INVISIBLE
-            etPassword.background.setColorFilter(successColor, PorterDuff.Mode.SRC_IN)
+            etMail.background.setColorFilter(successColor, PorterDuff.Mode.SRC_IN)
         } else {
             tvErrorCode.visibility = View.VISIBLE
-            etPassword.background.setColorFilter(errorColor, PorterDuff.Mode.SRC_IN)
+            etMail.background.setColorFilter(errorColor, PorterDuff.Mode.SRC_IN)
         }
     }
 }

@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.cursokotlin.customviewkotlin.PasswordValidatorView
+    <com.cursokotlin.customviewkotlin.EmailValidatorView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:textError="Password incorrecta"
         app:underlineErrorColor="@color/red"
-        app:underlineSuccessColor="@color/green"/>
+        app:underlineSuccessColor="@color/green" />
 </LinearLayout>
